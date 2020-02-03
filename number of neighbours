@@ -1,6 +1,6 @@
 //number of neighbours for each vertex
 //prints number of neighbours of every vertex
-//also prints total number of neighbours for all elements combined(n+2m) in a mor convoluted way
+//also prints total number of neighbours for all elements combined(n+2m) in a more convoluted way
 #include<iostream>
 #include<vector>
 
