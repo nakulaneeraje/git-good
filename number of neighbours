@@ -1,10 +1,12 @@
 //number of neighbours for each vertex
+//prints number of neighbours of every vertex
+//also prints total number of neighbours for all elements combined(n+2m) in a mor convoluted way
 #include<iostream>
 #include<vector>
 
 using namespace std;
 int main(){
-    int n,e,p1,p2;
+    int n,e,p1,p2,sum=0;
     vector< vector<int> > list;
     cin>>n;
     cin>>e;
@@ -19,8 +21,10 @@ int main(){
         list[p2-1].push_back(p1);
     }
     for(int i=0;i<n;i++){
-        cout<<list[i].size()<<endl;
+        cout<<i+1<<" :"<<list[i].size()<<endl;
+        sum=sum+list[i].size();
     }
+     cout<<"The sum of all neighbours: "<<sum;
    return 0;
 }
                 
