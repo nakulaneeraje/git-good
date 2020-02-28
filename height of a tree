@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void algoX(vector <vector <int> > &graph, int node, int *funcX,int* bount,int count) {
+	
+	
+    
+    funcX[node] = 1;
+    
+    
+    for(int i = 0; i<graph[node].size(); ++i) {
+        
+        int unknown = graph[node][i];
+        
+        if(!funcX[unknown]) {
+            count++;
+            algoX(graph, unknown, funcX, bount, count);
+            bount[unknown]=count;
+            count--;
+        }
+    }
+    
+    return;
+}
+
+int main() {
+    
+    vector <vector <int> > graph;
+    vector<int> h[13];
+    int bount[13];
+    
+
+    
+    
+    	h[0]={1,9};
+    	h[1]={0,2,5};
+    	h[2]={1,6,3};
+    	h[3]={2};
+    	h[4]={11};
+    	h[5]={1};
+    	h[6]={2,7,8};
+    	h[7]={6};
+    	h[8]={6};
+    	h[9]={0,10,11,12};
+    	h[10]={9};
+    	h[11]={9,4};
+    	h[12]={9};
+
+    	graph.push_back(h[0]);
+    	graph.push_back(h[1]);
+    	graph.push_back(h[2]);
+    	graph.push_back(h[3]);
+    	graph.push_back(h[4]);
+    	graph.push_back(h[5]);
+    	graph.push_back(h[6]);
+    	graph.push_back(h[7]);
+    	graph.push_back(h[8]);
+    	graph.push_back(h[9]);
+    	graph.push_back(h[10]);
+    	graph.push_back(h[11]);
+    	graph.push_back(h[12]);
+
+
+      
+    
+    
+    int funcX[13];
+    
+    for(int i = 0; i<13; ++i) funcX[i] = 0;
+        algoX(graph, 0, funcX, bount,1);
+        bount[0]=1;
+	for(int i=0;i<13;i++){
+		cout<<bount[i]<<" ";
+	}
+    
+    
+    
+    return 0;
+}
