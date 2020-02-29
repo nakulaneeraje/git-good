@@ -1,3 +1,5 @@
+//taken an example  graph
+//trivial to generalise though
 #include <bits/stdc++.h>
 using namespace std;
 
